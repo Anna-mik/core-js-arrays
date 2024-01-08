@@ -200,8 +200,8 @@ function getHead(arr, n) {
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(arr, n) {
-  return arr.slice(-n);
+function getTail(/* arr, n */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -303,11 +303,8 @@ function flattenArray(nestedArray) {
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(arr, childrenSelector) {
-  return arr.reduce(
-    (result, item) => result.concat(childrenSelector(item)),
-    []
-  );
+function selectMany(/* arr, childrenSelector */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -342,12 +339,8 @@ function calculateBalance(arr) {
  *    createChunks(['a', 'b', 'c', 'd', 'e'], 2) => [['a', 'b'], ['c', 'd'], ['e']]
  *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
  */
-function createChunks(arr, chunkSize) {
-  const result = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-    result.push(arr.slice(i, i + chunkSize));
-  }
-  return result;
+function createChunks(/* arr, chunkSize */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -499,20 +492,8 @@ function findCommonElements(arr1, arr2) {
  *    findLongestIncreasingSubsequence([3, 10, 2, 1, 20]) => 2
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => 3
  */
-function findLongestIncreasingSubsequence(nums) {
-  if (nums.length === 0) return 0;
-
-  const dp = Array(nums.length).fill(1);
-
-  for (let i = 1; i < nums.length; i += 1) {
-    for (let j = 0; j < i; j += 1) {
-      if (nums[i] > nums[j]) {
-        dp[i] = Math.max(dp[i], dp[j] + 1);
-      }
-    }
-  }
-
-  return Math.max(...dp);
+function findLongestIncreasingSubsequence(/* nums */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -599,13 +580,8 @@ function sortDigitNamesByNumericOrder(arr) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(arr) {
-  const mid = Math.floor(arr.length / 2);
-  const head = arr.slice(0, mid);
-  const tail = arr.slice(-mid);
-  return arr.length % 2 === 0
-    ? [...tail, ...head]
-    : [...tail, arr[mid], ...head];
+function swapHeadAndTail(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 module.exports = {
